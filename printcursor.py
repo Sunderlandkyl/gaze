@@ -5,7 +5,7 @@ Created on Thu Nov 19 22:16:22 2020
 @author: Seb
 """
 import win32gui
-import threading
+import time
 
 xlength = 1920
 ylength = 1080
@@ -18,8 +18,8 @@ rightbound = (1 - m) * xlength
 upbound = m * ylength
 downbound = (1 - m) * ylength
 
-def printit():
-  threading.Timer(2.0, printit).start()
+while True:
+  time.sleep(1)
   pos = win32gui.GetCursorPos()
   x = pos[0]
   y = pos[1]
@@ -34,6 +34,3 @@ def printit():
     print("UP")
   else: 
     print("NOT CARDINAL DIRECTION")
-
-
-printit()
